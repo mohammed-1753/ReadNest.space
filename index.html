@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Nest.space</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<body>
+  <header>
+    <div class="header-container" role="banner" aria-label="Site header">
+      <div class="logo-title-container">
+        <img src="images/logo.webp" alt="Read Nest logo" class="logo" />
+        <h1 class="site-title">Read Nest - digital reading nest for your favorite genre</h1>
+        <p></p>
+        <p></p>
+        <input type="text" class="input" placeholder="Search Something..">
+      </div>
+      <nav role="navigation" aria-label="Primary navigation" class="nav-menu">
+        <a href="signup.html" class="nav-link" tabindex="0">Sign Up</a>
+        <a href="login.html" class="nav-link" tabindex="0">Log In</a>
+        <a href="about.html" class="nav-link" tabindex="0">About</a>
+        <a href="favorites.html" class="nav-link" tabindex="0">My Favorites</a>
+        <div class="dropdown" id="genreDropdownWrapper">
+          <button class="dropbtn" id="dropdownToggle">Genres <i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content" id="genreDropdown">
+            <!-- Genre options will be added here dynamically -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" role="main">
+      <!-- Cards will be dynamically added here using JavaScript -->
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>&copy; <span id="currentYear"></span> Mohammed fatehpurwala. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

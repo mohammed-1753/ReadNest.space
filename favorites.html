@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorites - Read Nest.space</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    .favorites-section {
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    .favorites-section h2 {
+      color: #ff4d4d;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .no-favorites {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    .story-favorites {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .story-card {
+      background-color: #2b2b2b;
+      border: 1px solid #ff4d4d;
+      border-radius: 10px;
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .story-card h3 {
+      color: #ff4d4d;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .story-card p {
+      color: #b0b0b0;
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    .story-card .favorite-button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #ff4d4d;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container" role="banner" aria-label="Site header">
+      <div class="logo-title-container">
+        <img src="images/logo.webp" alt="Read Nest logo" class="logo" />
+        <h1 class="site-title">My Favorites</h1>
+      </div>
+      <nav role="navigation" aria-label="Primary navigation" class="nav-menu">
+        <a href="index.html" class="nav-link" tabindex="0">Home</a>
+        <a href="signup.html" class="nav-link" tabindex="0">Sign Up</a>
+        <a href="login.html" class="nav-link" tabindex="0">Log In</a>
+        <a href="about.html" class="nav-link" tabindex="0">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" role="main">
+      <!-- Genre Favorites Section -->
+      <div class="favorites-section">
+        <h2>Favorite Genres</h2>
+        <div id="genre-favorites-container" class="favorites-container">
+          <!-- Genre favorites will be displayed here -->
+        </div>
+      </div>
+
+      <!-- Story Favorites Section -->
+      <div class="favorites-section">
+        <h2>Favorite Stories</h2>
+        <div id="story-favorites-container" class="story-favorites">
+          <!-- Story favorites will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>&copy; <span id="currentYear"></span> Mohammed fatehpurwala. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Function to display genre favorites
+    function displayGenreFavorites() {
+      const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+      const container = document.getElementById('genre-favorites-container');
+      
+      if (favorites.length === 0) {
+        container.innerHTML = '<p class="no-favorites">You haven\'t added any favorite genres yet.</p>';
+        return;
+      }
+
+      // Filter cardsData to only show favorited genres
+      const favoritedGenres = cardsData.filter(card => favorites.includes(card.title));
+      
+      // Clear container
+      container.innerHTML = '';
+      
+      // Display favorited genres
+      favoritedGenres.forEach(card => {
+        const cardElement = createCard(card);
+        container.appendChild(cardElement);
+      });
+    }
+
+    // Function to display story favorites
+    function displayStoryFavorites() {
+      const favorites = JSON.parse(localStorage.getItem('storyFavorites') || '[]');
+      const container = document.getElementById('story-favorites-container');
+      
+      if (favorites.length === 0) {
+        container.innerHTML = '<p class="no-favorites">You haven\'t added any favorite stories yet.</p>';
+        return;
+      }
+
+      // Create story cards
+      container.innerHTML = '';
+      favorites.forEach(title => {
+        const storyCard = document.createElement('div');
+        storyCard.className = 'story-card';
+        storyCard.innerHTML = `
+          <button class="favorite-button favorited" onclick="toggleStoryFavorite('${title}', this)">
+            <i class="fa fa-heart"></i>
+          </button>
+          <h3>${title}</h3>
+          <p>Click the heart to remove from favorites</p>
+        `;
+        container.appendChild(storyCard);
+      });
+    }
+
+    // Function to toggle story favorite
+    function toggleStoryFavorite(title, button) {
+      const favorites = JSON.parse(localStorage.getItem('storyFavorites') || '[]');
+      const index = favorites.indexOf(title);
+      
+      if (index !== -1) {
+        favorites.splice(index, 1);
+        button.parentElement.remove();
+      }
+      
+      localStorage.setItem('storyFavorites', JSON.stringify(favorites));
+      
+      // Update display if no favorites left
+      if (favorites.length === 0) {
+        document.getElementById('story-favorites-container').innerHTML = 
+          '<p class="no-favorites">You haven\'t added any favorite stories yet.</p>';
+      }
+    }
+
+    // Display favorites when page loads
+    window.onload = function() {
+      displayGenreFavorites();
+      displayStoryFavorites();
+      updateFooterYear();
+    };
+  </script>
+</body>
+</html> 
