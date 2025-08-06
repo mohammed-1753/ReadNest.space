@@ -1,73 +1,75 @@
 // Data for the cards
+const basePath = window.location.pathname.includes('/ReadNest.space') ? '/ReadNest.space/' : '/';
+
 const cardsData = [
   {
-    image: "images/horror2.jpeg",
+    image: basePath + "images/horror2.jpeg",
     title: "HORROR",
     description: "Unearth chilling tales that haunt the mind and quicken the pulse. Step into the world of fear, suspense, and the supernatural.",
     link: "public/horror.html"
   },
   {
-    image: "images/history.jpeg",
+    image: basePath + "images/history.jpeg",
     title: "HISTORY",
     description: "Explore pivotal moments, iconic figures, and the events that shaped our world. History comes alive through captivating narratives.",
     link: "public/history.html"
   },
   {
-    image: "images/space.jpeg",
+    image: basePath + "images/space.jpeg",
     title: "SPACE BEYOND EARTH",
     description: "Venture beyond the stars with thrilling tales of exploration, unknown galaxies, and the mysteries of the cosmos. Explore now by clicking below",
     link: "public/space.html"
   },
   {
-    image: "images/Fantasy.jpeg",
+    image: basePath + "images/Fantasy.jpeg",
     title: "FANTASY",
     description: "Immerse yourself in magical worlds filled with mythical creatures, epic adventures, and boundless imagination.",
     link: "public/fantasy.html"
   },
   {
-    image: "images/mystry.jpeg",
+    image: basePath + "images/mystry.jpeg",
     title: "MYSTERY/THRILLER",
     description: "Dive into gripping tales of suspense, crime-solving, and unexpected twists.",
     link: "https://www.mysteryandsuspense.com"
   },
   {
-    image: "images/download.jpeg",
+    image: basePath + "images/download.jpeg",
     title: "PHYSICS",
     description: "Enjoy light-hearted, feel-good stories about love, humor, and charming characters.",
     link: "https://notalwaysright.com/romantic/"
   },
   {
-    image: "images/geography.jpg",
+    image: basePath + "images/geography.jpg",
     title: "GEOGRAPHY",
     description: "Explore geographical wonders and fascinating facts about the world.",
     link: "https://historyarchive.org"
   },
   {
-    image: "images/dinasaur.jpg",
+    image: basePath + "images/dinasaur.jpg",
     title: "DINOSAUR",
     description: "Journey back to prehistoric times and discover the giants that once roamed the Earth.",
     link: "https://historyarchive.org"
   },
   {
-    image: "images/time.webp",
+    image: basePath + "images/time.webp",
     title: "TIME TRAVEL",
     description: "Explore the fascinating concept of time travel through captivating narratives.",
     link: "https://historyarchive.org"
   },
   {
-    image: "images/mythology.jpg",
+    image: basePath + "images/mythology.jpg",
     title: "MYTHOLOGY",
     description: "Dive into ancient myths, legends, and folklore from around the world.",
     link: "https://historyarchive.org"
   },
   {
-    image: "images/caves.webp",
+    image: basePath + "images/caves.webp",
     title: "SURVIVAL STORIES",
     description: "Inspirational tales of human resilience and survival against all odds.",
     link: "https://historyarchive.org"
   },
   {
-    image: "images/genetic biology.png",
+    image: basePath + "images/genetic biology.png",
     title: "GENETIC BIOLOGY",
     description: "Explore the fascinating world of genes, DNA, and the blueprint of life.",
     link: "https://historyarchive.org"
