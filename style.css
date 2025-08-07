@@ -1,11 +1,10 @@
 /* ===== GLOBAL RESET ===== */
 body {
   background: #0d0d0d;
-  color: #eeeeee;
-  font-family: 'Poppins', sans-serif;
+  color: #cde4e7; /* Main text color: soft pastel blue */
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  
 }
 
 /* ===== HEADER ===== */
@@ -46,9 +45,11 @@ header {
 
 .site-title {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #86ffe5; /* bright aqua/cyan for main title */
   white-space: nowrap;
   user-select: none;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -58,16 +59,17 @@ header {
 
 .nav-link {
   text-decoration: none;
-  color: #cccccc;
-  font-weight: 500;
+  color: #b5ffe4; /* minty aqua softer for links */
+  font-weight: 600;
   padding: 50px 50px;
   border-radius: 10px;
   transition: all 0.3s ease;
+  user-select: none;
 }
 
 .nav-link:hover {
   background: #222;
-  color: #ffffff;
+  color: #86ffe5; /* brighter on hover */
 }
 
 /* ===== MAIN CONTAINER ===== */
@@ -93,6 +95,7 @@ header {
   transform-style: preserve-3d;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
+  color: #cde4e7; /* fallback text color */
 }
 
 .card img {
@@ -116,12 +119,14 @@ header {
 }
 
 /* Card Content */
-.card h3, .card p, .card a {
+.card h3,
+.card p,
+.card a {
   position: absolute;
   left: 20px;
   right: 20px;
-  color: #eeeeee;
   z-index: 2;
+  font-family: 'Montserrat', cursive, sans-serif;
 }
 
 .card h3 {
@@ -129,39 +134,41 @@ header {
   font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family:cursive;
+  color: #86ffe5; /* bright aqua for headings */
+  font-family: cursive, 'Montserrat', sans-serif;
 }
 
 .card p {
   top: 100px;
   font-size: 1rem;
   line-height: 1.6;
-  color: #cccccc;
+  color: #b5ffe4; /* minty aqua softer text */
 }
 
 .button-link {
   bottom: 30px;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(72, 178, 147, 0.4); /* translucent teal */
   border: none;
   text-decoration: none;
   border-radius: 30px;
-  color: #ffffff;
+  color: #e3f6f5; /* very light pastel */
   font-weight: 600;
   display: inline-block;
   font-size: 0.95rem;
   text-align: center;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .button-link:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #49b293; /* solid teal on hover */
+  color: #0d0d0d; /* dark text on hover button */
 }
 
 /* Card Hover Effects */
 .card:hover {
   transform: translateY(-15px) rotateX(5deg) scale(1.05);
-  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(134, 255, 229, 0.3); /* soft aqua glow */
 }
 
 /* ===== FOOTER ===== */
@@ -170,8 +177,9 @@ header {
   background: #111;
   text-align: center;
   padding: 20px;
-  color: #666;
+  color: #666; /* muted gray */
   font-size: 0.9rem;
+  user-select: none;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -199,7 +207,7 @@ header {
     text-align: left;
     white-space: normal;
   }
-  
+
   /* Nav links wrap and shrink appropriately */
   .nav-menu {
     flex-wrap: wrap;
@@ -212,7 +220,7 @@ header {
     padding: 8px 12px;
     font-size: 0.85rem;
   }
-  
+
   /* Dropdown Button Adjustments */
   .dropbtn {
     padding: 8px 12px;
@@ -225,8 +233,8 @@ header {
     padding: 6px 10px;
     font-size: 0.9rem;
   }
-
 }
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
   from {
@@ -238,6 +246,7 @@ header {
     transform: translateY(0);
   }
 }
+
 /* ===== MODERN DROPDOWN MENU ===== */
 .dropdown {
   position: relative;
@@ -246,8 +255,8 @@ header {
 
 .dropbtn {
   background: none;
-  color: #cccccc;
-  font-weight: 500;
+  color: #b5ffe4;
+  font-weight: 600;
   padding: 50px 50px;
   border: none;
   cursor: pointer;
@@ -255,6 +264,7 @@ header {
   display: flex;
   align-items: center;
   gap: 5px;
+  user-select: none;
 }
 
 .dropdown-content {
@@ -273,18 +283,18 @@ header {
 }
 
 .dropdown-content a {
-  color: #cccccc;
+  color: #b5ffe4;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   transition: background 0.3s;
+  user-select: none;
 }
 
 .dropdown-content a:hover {
   background-color: #333;
-  color: #ffffff;
+  color: #86ffe5;
 }
-
 
 /* Animation */
 @keyframes fadeIn {
@@ -302,7 +312,9 @@ header {
 .dropdown.active .dropdown-content {
   display: flex;
 }
-.input[type=text] {
+
+/* Input styles */
+input[type=text] {
   display: flex;
   max-width: 500px;
   max-height: 100px;
@@ -314,9 +326,10 @@ header {
   position: relative;
   padding: 10px 20px;
   font-size: 1.2rem;
-  color: #eeeeee;
+  color: #cde4e7; /* main text color */
   border: none;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Favorite Button Styles */
@@ -326,13 +339,14 @@ header {
   right: 20px;
   background: none;
   border: none;
-  color: #ffffff;
+  color: #86ffe5; /* bright aqua */
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 3;
   padding: 5px;
   transition: all 0.3s ease;
   opacity: 0.8;
+  user-select: none;
 }
 
 .favorite-button:hover {
@@ -341,7 +355,7 @@ header {
 }
 
 .favorite-button.favorited {
-  color: #ff4d4d;
+  color: #ff4d4d; /* strong red */
   opacity: 1;
 }
 
