@@ -1,100 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup • Read Nest</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #181818 0%, #282c34 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .signup-container {
+      background: rgba(36, 37, 47, 0.97);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
+      color: #fafafa;
+      padding: 36px 28px 24px 28px;
+      min-width: 350px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #b5ffe4;
+    }
+    .input-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #86ffe5;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #49b293;
+      border-radius: 7px;
+      background: #23242a;
+      color: #e3e3e3;
+      font-size: 1rem;
+      box-sizing: border-box;
+      margin-top: 2px;
+      transition: border 0.2s, background 0.2s;
+      outline: none;
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border: 1.5px solid #86ffe5;
+      background: #262833;
+    }
+    .signup-button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #49b293 37%, #86ffe5 100%);
+      color: #18212e;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.25s, color 0.25s;
+      letter-spacing: 1px;
+    }
+    .signup-button:hover {
+      background: linear-gradient(90deg, #86ffe5 5%, #49b293 100%);
+      color: #181818;
+    }
+    .login-link {
+      margin-top: 22px;
+      color: #b5ffe4;
+      font-size: .98em;
+    }
+    .login-link a {
+      color: #86ffe5;
+      text-decoration: none;
+      font-weight: 700;
+      transition: text-decoration 0.15s;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Signup</h2>
-        <form action="#" method="post">
-            <div class="input-group">
-                <label for="username">First Name</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Last Name</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="Create Password">Create your password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-button">Login</button>
-        </form>
-        <p class="signup-link">Already have an account? <a href="login.html">login here</a></p>
+  <div class="signup-container">
+    <h2>Create Your Read Nest Account</h2>
+    <form action="/signup" method="post" autocomplete="off">
+      <!-- CSRF Token (replace this with a real, server-generated token) -->
+      <input type="hidden" name="csrf_token" value="REPLACE_WITH_CSRF_TOKEN">
+      <div class="input-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+      </div>
+      <div class="input-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+      </div>
+      <div class="input-group">
+        <label for="signup_password">Create Password</label>
+        <input type="password" id="signup_password" name="password" required autocomplete="new-password">
+      </div>
+      <button type="submit" class="signup-button">Sign Up</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
     </div>
+  </div>
 </body>
 </html>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.login-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-
-.signup-link {
-    margin-top: 15px;
-}
-
-.signup-link a {
-    color: #4CAF50; /* Green */
-    text-decoration: none;
-}
-
-.signup-link a:hover {
-    text-decoration: underline;
-}
-</style>
