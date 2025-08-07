@@ -1,71 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us • Read Nest</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #181818 0%, #282c34 100%);
+      color: #cde4e7;
+      margin: 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      align-items: flex-start;
+    }
+
+    .about-container {
+      background: rgba(20, 22, 32, 0.95);
+      max-width: 800px;
+      margin: 60px 0;
+      padding: 40px 40px 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      line-height: 1.6;
+      color: #cde4e7;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 32px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #86ffe5;
+      text-shadow: 0 0 8px #49b293, 0 0 20px #86ffe5;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #49b293;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #49b293;
+      padding-bottom: 6px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #b5ffe4;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 25px;
+      margin-bottom: 32px;
+      color: #a6ecec;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .about-container {
+        padding: 30px 20px 40px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p, li {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="about-container">
-        <h1>About Us</h1>
-        <p>Welcome to Read Nest, your digital reading nest for your favorite genres! We are dedicated to providing a vast collection of reading materials, including books, articles, and more, to cater to all your literary needs.</p>
-        
-        <h2>Our Mission</h2>
-        <p>Our mission is to foster a love for reading by making literature accessible to everyone. We believe that reading enriches lives and opens up new worlds of imagination and knowledge.</p>
+  <div class="about-container" role="main" aria-label="About Read Nest">
+    <h1>About Us</h1>
+    <p>Welcome to <strong>Read Nest</strong>, your digital reading nest for your favorite genres! We are dedicated to providing a vast collection of reading materials, including books, articles, and more, to cater to all your literary needs.</p>
 
-        <h2>What We Offer</h2>
-        <ul>
-            <li>Extensive collection of genres: Horror, History, Space, Fantasy, Mystery, and Romance.</li>
-            <li>User-friendly interface for easy navigation.</li>
-            <li>Regularly updated content to keep you engaged.</li>
-            <li>Community features to connect with fellow readers.</li>
-        </ul>
+    <h2>Our Mission</h2>
+    <p>Our mission is to foster a love for reading by making literature accessible to everyone. We believe that reading enriches lives and opens up new worlds of imagination and knowledge.</p>
 
-        <h2>Join Us</h2>
-        <p>Become a part of our community and embark on your reading journey with us today!</p>
-    </div>
+    <h2>What We Offer</h2>
+    <ul>
+      <li>Extensive collection of genres: Horror, History, Space, Fantasy, Mystery, and Romance.</li>
+      <li>User-friendly interface for easy navigation.</li>
+      <li>Regularly updated content to keep you engaged.</li>
+      <li>Community features to connect with fellow readers.</li>
+    </ul>
+
+    <h2>Join Us</h2>
+    <p>Become a part of our community and embark on your reading journey with us today!</p>
+  </div>
 </body>
 </html>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-h2 {
-    color: blue;
-    margin-top: 20px;
-}
-
-p {
-    line-height: 1.6;
-    color: #555;
-}
-
-ul {
-    list-style-type: disc;
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-</style>
